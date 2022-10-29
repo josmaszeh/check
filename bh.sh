@@ -96,11 +96,11 @@ if [[ $xray == "running" ]]; then
 else
     status_xray="${RED}OFF${NC}"
 fi
+upsc=$( curl -sS https://raw.githubusercontent.com/joasmaszeh/check/main/version)
 clear
 ISP=$(curl -sS http://ip-api.com/php/?fields=isp | cut -d : -f 7 | sed 's/";}//g' | sed 's/"//g')
 CITY=$(curl -sS http://ip-api.com/php/?fields=city | cut -d : -f 7 | sed 's/";}//g' | sed 's/"//g')
 IPVPS=$(curl -s ipinfo.io/ip )
-upsc=$( curl -sS https://raw.githubusercontent.com/joasmaszeh/check/main/version)
 echo -e "${COLOR1}═════════════════════════════════════════════════════════${NC}"
 echo -e "${COLBG1}                      ADMIN PANEL MENU                   ${NC}"
 echo -e "${COLOR1}═════════════════════════════════════════════════════════${NC}"
@@ -118,7 +118,7 @@ echo -e " (${YELLOW}05${NC}) × Renew Cert           (${YELLOW}08${NC}) × Monit
 echo -e ""
 echo -e " [${YELLOW}A${NC}] • INFO PORT / [${YELLOW}B${NC}] • INFO VPS / [${YELLOW}C${NC}] • BOT XOLPANEL"
 echo -e "${COLOR1}═════════════════════════════════════════════════════════${NC}"
-echo -e "   [ NGINX : $status_nginx ]   [ SSH-WS : $status_ws ]   [ XRAY : $status_xray ]"
+echo -e "    [ NGINX : $status_nginx ]   [ SSH-WS : $status_ws ]   [ XRAY : $status_xray ]"
 echo -e "${COLOR1}═════════════════════════════════════════════════════════${NC}"
 if [ "$Isadmin" = "ON" ]; then
 uis="${GREEN}Premium User$NC"
