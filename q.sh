@@ -31,7 +31,8 @@ BURIQ () {
     rm -f /root/tmp
 }
 
-up=$( curl -sS https://raw.githubusercontent.com/joasmaszeh/check/main/version)
+version_up=$( curl -sS https://raw.githubusercontent.com/joasmaszeh/check/main/version)
+echo "$version_up" > /opt/.ver
 MYIP=$(curl -sS ipv4.icanhazip.com)
 Name=$(curl -sS https://raw.githubusercontent.com/josmaszeh/check/main/access | grep $MYIP | awk '{print $2}')
 Isadmin=$(curl -sS https://raw.githubusercontent.com/josmaszeh/check/main/access | grep $MYIP | awk '{print $5}')
@@ -127,7 +128,7 @@ uis="${RED}Free Version$NC"
 fi
 echo -e " Username  : $Name"
 echo -e " User Type : $uis"
-echo -e " Version   : V $up"
+echo -e " Version   : $(cat /opt/.ver)"
 echo -e " License   : admin (Control)"
 echo -e "${COLOR1}═════════════════════════════════════════════════════════${NC}"
 echo -e ""
