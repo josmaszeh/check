@@ -99,7 +99,7 @@ else
     status_xray="${RED}OFF${NC}"
 fi
 echo -e "${COLOR1}═════════════════════════════════════════════════════════${NC}"
-echo -e "${COLBG1}                      ADMIN PANEL MENU"                                                         ${NC}
+echo -e "${COLBG1}                       ADMIN PANEL MENU                             ${NC}"
 echo -e "${COLOR1}═════════════════════════════════════════════════════════${NC}"
 echo -e ""
 echo -e ""
