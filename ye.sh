@@ -11,8 +11,6 @@ export COLBG1="$(cat /etc/yokkovpn/theme/$colornow | grep -w "BG" | cut -d: -f2|
 ###########- END COLOR CODE -##########
 tram=$( free -h | awk 'NR==2 {print $2}' )
 uram=$( free -h | awk 'NR==2 {print $3}' )
-Isp=$(curl -s ipinfo.io/org | cut -d " " -f 2-10 )
-City=$(curl -s ipinfo.io/city )
 
 
 BURIQ () {
@@ -98,10 +96,38 @@ if [[ $xray == "running" ]]; then
 else
     status_xray="${RED}OFF${NC}"
 fi
+clear
+ISP=$(curl -sS http://ip-api.com/php/?fields=isp | cut -d : -f 7 | sed 's/";}//g' | sed 's/"//g')
+CITY=$(curl -sS http://ip-api.com/php/?fields=city | cut -d : -f 7 | sed 's/";}//g' | sed 's/"//g')
+IPVPS=$(curl -s ipinfo.io/ip )
+upsc=$( curl -sS https://raw.githubusercontent.com/joasmaszeh/check/main/version)
+echo -e "${COLOR1}═════════════════════════════════════════════════════════${NC}"
+echo -e " Current IP     : $IPVPS"
+echo -e " Current Domain : $(cat /etc/xray/domain)"
+echo -e " City & ISP     : $ISP / $CITY"
+echo -e " Memory Usage   : $tram MB / $uram MB"
 echo -e "${COLOR1}═════════════════════════════════════════════════════════${NC}"
 echo -e "${COLBG1}                      ADMIN PANEL MENU                   ${NC}"
 echo -e "${COLOR1}═════════════════════════════════════════════════════════${NC}"
 echo -e ""
+echo -e " ($YELLOW}01${NC}) × Menu Sshws             ($YELLOW}05${NC}) × Add New Domain"
+echo -e " ($YELLOW}02${NC}) × Menu Vmess             ($YELLOW}06${NC}) × Menu System"
+echo -e " ($YELLOW}03${NC}) × Menu Vless             ($YELLOW}07${NC}) × Menu Backup"
+echo -e " ($YELLOW}04${NC}) × Menu Trojan            ($YELLOW}08${NC}) × Pilihan Theme"
+echo -e " ($YELLOW}05${NC}) × Renew Cert             ($YELLOW}08${NC}) × Monitoring Vps"
+echo -e ""
+echo -e " [A] • INFO PORT               [B] • INFO VPS"
+echo -e "${COLOR1}═════════════════════════════════════════════════════════${NC}"
+if [ "$Isadmin" = "ON" ]; then
+uis="${GREEN}Premium User$NC"
+else
+uis="${RED}Free Version$NC"
+fi
+echo -e " Username  : $Name"
+echo -e " User Type : $uis"
+echo -e " Version   : $upsc"
+echo -e " License   : admin"
+echo -e "${COLOR1}═════════════════════════════════════════════════════════${NC}"
 echo -e ""
 echo -ne " Input Your Choose : "; read opt
 case $opt in
