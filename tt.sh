@@ -31,6 +31,7 @@ BURIQ () {
     rm -f /root/tmp
 }
 
+up=$( curl -sS https://raw.githubusercontent.com/joasmaszeh/check/main/version)
 MYIP=$(curl -sS ipv4.icanhazip.com)
 Name=$(curl -sS https://raw.githubusercontent.com/josmaszeh/check/main/access | grep $MYIP | awk '{print $2}')
 Isadmin=$(curl -sS https://raw.githubusercontent.com/josmaszeh/check/main/access | grep $MYIP | awk '{print $5}')
@@ -96,7 +97,6 @@ if [[ $xray == "running" ]]; then
 else
     status_xray="${RED}OFF${NC}"
 fi
-upsc=$( curl -sS https://raw.githubusercontent.com/joasmaszeh/check/main/version)
 clear
 ISP=$(curl -sS http://ip-api.com/php/?fields=isp | cut -d : -f 7 | sed 's/";}//g' | sed 's/"//g')
 CITY=$(curl -sS http://ip-api.com/php/?fields=city | cut -d : -f 7 | sed 's/";}//g' | sed 's/"//g')
@@ -127,8 +127,8 @@ uis="${RED}Free Version$NC"
 fi
 echo -e " Username  : $Name"
 echo -e " User Type : $uis"
-echo -e " Version   : $upsc"
-echo -e " License   : admin"
+echo -e " Version   : V $up"
+echo -e " License   : admin (Control)"
 echo -e "${COLOR1}═════════════════════════════════════════════════════════${NC}"
 echo -e ""
 echo -ne " Input Your Choose : "; read opt
