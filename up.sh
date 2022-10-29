@@ -116,9 +116,9 @@ echo -e " (${YELLOW}03${NC}) × Menu Vless           (${YELLOW}07${NC}) × Menu 
 echo -e " (${YELLOW}04${NC}) × Menu Trojan          (${YELLOW}08${NC}) × Pilihan Theme"
 echo -e " (${YELLOW}05${NC}) × Renew Cert           (${YELLOW}08${NC}) × Monitoring Vps"
 echo -e ""
-echo -e " [A] • INFO PORT               [B] • INFO VPS"
+echo -e " [${YELLOW}A${NC}] • INFO PORT / [${YELLOW}B${NC}] • INFO VPS / [${YELLOW}C${NC}] • BOT XOLPANEL"
 echo -e "${COLOR1}═════════════════════════════════════════════════════════${NC}"
-echo -e " [ NGINX : $status_nginx ]  [ SSH-WS : $status_ws ]  [ XRAY : $status_xray ]"
+echo -e "               [ NGINX : ON ]       [ SSH-WS : ON ]       [ XRAY : ON ]"
 echo -e "${COLOR1}═════════════════════════════════════════════════════════${NC}"
 if [ "$Isadmin" = "ON" ]; then
 uis="${GREEN}Premium User$NC"
