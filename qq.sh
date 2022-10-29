@@ -106,17 +106,17 @@ IPVPS=$(curl -s ipinfo.io/ip )
 echo -e "${COLOR1}═════════════════════════════════════════════════════════${NC}"
 echo -e "${COLBG1}                      ADMIN PANEL MENU                   ${NC}"
 echo -e "${COLOR1}═════════════════════════════════════════════════════════${NC}"
-echo -e " Current IP     : $IPVPS"
-echo -e " Current Domain : $(cat /etc/xray/domain)"
+echo -e " Current IP     : ${GREEN}$IPVPS ${NC}"
+echo -e " Current Domain : ${GREEN}$(cat /etc/xray/domain) ${NC}"
 echo -e " City & ISP     : $ISP / $CITY"
 echo -e " Memory Usage   : $tram MB / $uram MB"
 echo -e "${COLOR1}═════════════════════════════════════════════════════════${NC}"
 echo -e ""
-echo -e " (${YELLOW}01${NC}) × Menu Sshws           (${YELLOW}05${NC}) × Add New Domain"
-echo -e " (${YELLOW}02${NC}) × Menu Vmess           (${YELLOW}06${NC}) × Menu System"
-echo -e " (${YELLOW}03${NC}) × Menu Vless           (${YELLOW}07${NC}) × Menu Backup"
-echo -e " (${YELLOW}04${NC}) × Menu Trojan          (${YELLOW}08${NC}) × Pilihan Theme"
-echo -e " (${YELLOW}05${NC}) × Renew Cert           (${YELLOW}08${NC}) × Monitoring Vps"
+echo -e " (${YELLOW}01${NC}) × Menu Sshws           (${YELLOW}06${NC}) × Add New Domain"
+echo -e " (${YELLOW}02${NC}) × Menu Vmess           (${YELLOW}07${NC}) × Menu System"
+echo -e " (${YELLOW}03${NC}) × Menu Vless           (${YELLOW}08${NC}) × Menu Backup"
+echo -e " (${YELLOW}04${NC}) × Menu Trojan          (${YELLOW}09${NC}) × Pilihan Theme"
+echo -e " (${YELLOW}05${NC}) × Renew Cert           (${YELLOW}10${NC}) × Monitoring Vps"
 echo -e ""
 echo -e " [${YELLOW}A${NC}] • INFO PORT / [${YELLOW}B${NC}] • INFO VPS / [${YELLOW}C${NC}] • BOT XOLPANEL"
 echo -e "${COLOR1}═════════════════════════════════════════════════════════${NC}"
@@ -130,26 +130,21 @@ fi
 echo -e " Username  : $Name"
 echo -e " User Type : $uis"
 echo -e " Version   : $User"
-echo -e " License   : admin (Control)"
+echo -e " License   : ${GREEN}admin${NC} (Control)"
 echo -e "${COLOR1}═════════════════════════════════════════════════════════${NC}"
 echo -e ""
 echo -ne " Input Your Choose : "; read opt
 case $opt in
-01 | 1) clear ; menu-ssh ;;
-02 | 2) clear ; menu-vmess ;;
-03 | 3) clear ; menu-vless ;;
-04 | 4) clear ; menu-trojan ;;
-05 | 5) clear ; menu-ss ;;
-06 | 6) clear ; menu-dns ;;
-06 | 7) clear ; menu-theme ;;
-07 | 8) clear ; menu-backup ;;
-09 | 9) clear ; add-host ;;
-10) clear ; crtxray ;;
-11) clear ; menu-set ;;
-12) clear ; info ;;
-13) clear ; $ressee ;;
-14) clear ; $bottt ;;
-100) clear ; $up2u ;;
+01 | 1) clear ; ssh ;;
+02 | 2) clear ; vmess ;;
+03 | 3) clear ; vless ;;
+04 | 4) clear ; trojan ;;
+05 | 5) clear ; crtxray ;;
+06 | 6) clear ; domain ;;
+07 | 7) clear ; system ;;
+08 | 8) clear ; backup ;;
+09 | 9) clear ; theme ;;
+10) clear ; top ;;
 00 | 0) clear ; menu ;;
 *) clear ; menu ;;
 esac
