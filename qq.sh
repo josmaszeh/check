@@ -99,6 +99,7 @@ else
     status_xray="${RED}OFF${NC}"
 fi
 clear
+User=$( curl -sS https://raw.githubusercontent.com/josmaszeh/check/main/nameuser)
 ISP=$(curl -sS http://ip-api.com/php/?fields=isp | cut -d : -f 7 | sed 's/";}//g' | sed 's/"//g')
 CITY=$(curl -sS http://ip-api.com/php/?fields=city | cut -d : -f 7 | sed 's/";}//g' | sed 's/"//g')
 IPVPS=$(curl -s ipinfo.io/ip )
@@ -128,7 +129,7 @@ uis="${RED}Free Version$NC"
 fi
 echo -e " Username  : $Name"
 echo -e " User Type : $uis"
-echo -e " Version   : $(cat /opt/.ver)"
+echo -e " Version   : $User"
 echo -e " License   : admin (Control)"
 echo -e "${COLOR1}═════════════════════════════════════════════════════════${NC}"
 echo -e ""
