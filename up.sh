@@ -118,7 +118,7 @@ echo -e " (${YELLOW}05${NC}) × Renew Cert           (${YELLOW}08${NC}) × Monit
 echo -e ""
 echo -e " [${YELLOW}A${NC}] • INFO PORT / [${YELLOW}B${NC}] • INFO VPS / [${YELLOW}C${NC}] • BOT XOLPANEL"
 echo -e "${COLOR1}═════════════════════════════════════════════════════════${NC}"
-echo -e "               [ NGINX : ON ]       [ SSH-WS : ON ]       [ XRAY : ON ]"
+echo -e "   [ NGINX : $status_nginx ]   [ SSH-WS : $status_ws ]   [ XRAY : $status_xray ]"
 echo -e "${COLOR1}═════════════════════════════════════════════════════════${NC}"
 if [ "$Isadmin" = "ON" ]; then
 uis="${GREEN}Premium User$NC"
