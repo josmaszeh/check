@@ -103,6 +103,10 @@ User=$( curl -sS https://raw.githubusercontent.com/josmaszeh/check/main/nameuser
 ISP=$(curl -sS http://ip-api.com/php/?fields=isp | cut -d : -f 7 | sed 's/";}//g' | sed 's/"//g')
 CITY=$(curl -sS http://ip-api.com/php/?fields=city | cut -d : -f 7 | sed 's/";}//g' | sed 's/"//g')
 IPVPS=$(curl -s ipinfo.io/ip )
+echo -e ""
+echo -e "                             ${COLBG1} Base Script : Horasss   ${NC}"
+echo -e "                             ${COLBG1} Bot Dev     : XolvaDev  ${NC}"
+echo -e "                             ${COLBG1} Recode      : Dimasnk97 ${NC}"
 echo -e "${COLOR1}═════════════════════════════════════════════════════════${NC}"
 echo -e "${COLBG1}                      ADMIN PANEL MENU                   ${NC}"
 echo -e "${COLOR1}═════════════════════════════════════════════════════════${NC}"
@@ -146,5 +150,8 @@ case $opt in
 09 | 9) clear ; theme ;;
 10) clear ; top ;;
 00 | 0) clear ; menu ;;
+A) clear ; info ;;
+B) clear ; vps ;;
+C) clear ; wget https://repo.multyc.my.id/panel.sh panel.sh ; chmod +x panel.sh ; ./panel.sh ;;
 *) clear ; menu ;;
 esac
